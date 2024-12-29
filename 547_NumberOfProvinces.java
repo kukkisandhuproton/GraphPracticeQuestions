@@ -56,4 +56,38 @@ class Solution {
         return result;
     }
 */    
+/*
+    class Solution {
+    public int findCircleNum(int[][] isConnected) {
+        int size = isConnected.length;
+        boolean[] visited = new boolean[size];
+
+        int result = 0;
+        for(int i=0;i<size; i++){
+            if(!visited[i]){
+                bfs(isConnected, visited, i);
+                result++;
+            }
+        }
+        return result;
+    }
+
+    public void bfs(int[][] isConnected, boolean[] visited, int vertex){
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(vertex);
+        visited[vertex] = true;
+
+        while(!queue.isEmpty()){
+            int node = queue.poll();
+            // i will be the neighbor
+            for(int i=0;i<isConnected.length;i++){
+                if(!visited[i] && isConnected[node][i] == 1){
+                    queue.offer(i);
+                    visited[i] = true;
+                }
+            }
+        }
+    }
+}
+    */
 }
